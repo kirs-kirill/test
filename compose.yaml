@@ -3,7 +3,7 @@ services:
     image: nginx:stable-alpine
     volumes:
      - .:/usr/share/nginx/html
-    command: [chmod -R 0777 /usr/share/nginx/html]
+    command: [chmod -R 0777 /usr/share/nginx]
     ports:
      - "82:80"
     environment:
