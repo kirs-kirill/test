@@ -1,0 +1,10 @@
+services:
+  web:
+    image: nginx:stable-alpine3.20-perl
+    volumes:
+     - .:/usr/share/nginx/html
+    ports:
+     - "8080:80"
+    environment:
+     - NGINX_HOST=foobar.com
+     - NGINX_PORT=80
