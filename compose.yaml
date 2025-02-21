@@ -2,7 +2,7 @@ services:
   web:
     image: nginx:stable-alpine
     volumes:
-     - .:/usr/share/nginx/html
+     - .:/usr/share/nginx/html:rw
     ports:
      - "82:80"
     environment:
