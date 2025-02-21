@@ -1,11 +1,5 @@
 services:
   web:
-    image: nginx:stable-alpine
-    volumes:
-     - .:/usr/share/nginx/html
-    command: [chmod -R 0777 /usr/share/nginx]
+    build: .
     ports:
      - "82:80"
-    environment:
-     - NGINX_HOST=0.0.0.0
-     - NGINX_PORT=80
