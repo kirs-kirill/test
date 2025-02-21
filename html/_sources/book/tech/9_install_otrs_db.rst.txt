@@ -1,0 +1,118 @@
+Установка и настройка скрипта tickets.js
+----------------------------------------
+
+Tampermonkey - это популярное расширение для браузера, которое позволяет пользователям устанавливать и запускать пользовательские скрипты. В данной инструкции мы рассмотрим процесс установки и настройки Tampermonkey для работы с ОТРС и скриптом tickets.js.
+
+Процесс установки
+=================
+
+Перейдите на страницу расширения Tampermonkey в Chrome Web Store:
+
+https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/chrome_web_store.png
+   :scale: 50 %
+   :align: center
+
+   Страница Tampermonkey в Chrome Web Store
+
+Нажмите кнопку "Установить".
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/install_button.png
+   :scale: 100 %
+   :align: center
+
+   Кнопка "Установить" на странице расширения
+
+Перейдите на страницу управления расширениями Chrome:
+
+chrome://extensions/
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/extensions_page.png
+   :scale: 100 %
+   :align: center
+
+   Страница управления расширениями Chrome
+
+В правом верхнем углу ВКЛЮЧИТЕ "Режим разработчика".
+
+.. important:: Включение режима разработчика необходимо для полной функциональности Tampermonkey и возможности установки пользовательских скриптов.
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/developer_mode.png
+   :scale: 100 %
+   :align: center
+
+   Включение режима разработчика
+
+На этой же странице найдите Tampermonkey, нажмите кнопку "Сведения" и включите "Разрешить использование в режиме инкогнито".
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/incognito_mode.png
+   :scale: 75 %
+   :align: center
+
+   Разрешение использования в режиме инкогнито
+
+В правом верхнем углу нажмите на кнопку "Расширения".
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/extensions_button.png
+   :scale: 100 %
+   :align: center
+
+   Кнопка "Расширения" в Chrome
+
+Нажмите на Tampermonkey.
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/tampermonkey_icon.png
+   :scale: 100 %
+   :align: center
+
+   Выбор Tampermonkey из списка расширений
+
+Нажмите на "Создать новый скрипт...".
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/create_new_script.png
+   :scale: 100 %
+   :align: center
+
+   Создание нового скрипта в Tampermonkey
+
+В поле для редактирования вставьте содержимое файла tickets.js через сочетание клавиш Ctrl+A Ctrl+V.
+
+Скачать файл скрипта можно тут: |tickets.js| или посмотреть и скопировать `здесь <../../script.html>`_
+
+.. _target: script.rst
+
+.. |tickets.js| replace::
+   :download:`tickets.js </_static/tickets.js>`
+
+.. important:: Убедитесь, что вы вставили весь код без изменений. Любые ошибки или пропуски могут привести к неправильной работе скрипта.
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/paste_script.png
+   :scale: 75 %
+   :align: center
+
+   Вставка кода скрипта в редактор Tampermonkey
+
+Нажмите Файл - Сохранить.
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/save_script.png
+   :scale: 100 %
+   :align: center
+
+   Сохранение скрипта в Tampermonkey
+
+Перезапустите браузер закрыв все окна (Инкогнито в том числе).
+
+.. note:: Перезапуск браузера обеспечит полную активацию всех изменений и установленного скрипта.
+
+Зайдите в ОТРС, удостоверьтесь что скрипт работает.
+
+.. figure:: ../../_static/images/tech/9_install_otrs_db/otrs_check.png
+   :scale: 80 %
+   :align: center
+
+   Проверка работы скрипта в ОТРС
+
+.. important:: Если вы заметили какие-либо проблемы или скрипт не работает должным образом, проверьте все предыдущие шаги и убедитесь, что все было выполнено правильно. В случае персистирующих проблем обратитесь в службу технической поддержки.
+
+После выполнения всех шагов Tampermonkey должен быть успешно установлен и настроен для работы с вашим пользовательским скриптом tickets.js в ОТРС.

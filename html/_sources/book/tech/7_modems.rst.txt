@@ -1,0 +1,117 @@
+Модемы и AT-команды
+===================
+
+Тут будут собраны модели используемых модемов и AT-команды для них.
+
+Общие команды
+-------------
+
+Для LTE-интерфейса:
+~~~~~~~~~~~~~~~~~~~
+
+* rOS 7: ``/interface lte monitor lte1``
+
+* rOS 6: ``/interface lte info lte1``
+
+.. code-block:: bash
+
+        [tech@vita-smo-she-13] > /interface lte info lte1
+               pin-status: ok
+      registration-status: registered
+            functionality: full
+             manufacturer: SIMCOM INCORPORATED
+                    model: SIMCOM_SIM7600E-H
+                 revision: LE20B04SIM7600M22
+         current-operator: MegaFon MegaFon
+                      lac: 6751
+           current-cellid: 171535973
+                   enb-id: 670062
+                sector-id: 101
+        access-technology: Evolved 3G (LTE)
+           session-uptime: 54m52s
+                     imei: 860147053065296
+                     imsi: 250026270383840
+        subscriber-number: "         ","+79265104660",145
+                   earfcn: 3048
+                     rssi: -67dBm
+                     rsrp: -96dBm
+                     rsrq: -6.9dB
+
+Для ppp-out1:
+~~~~~~~~~~~~~
+
+Сначала надо остановить скрипт, который получает информацию с модема, потому что он занимает интерфейс и не дает считать с него данные.
+После остановки скрипта можно запрашивать информацию с модема, но делать это надо быстро, потому что скрипт часто перезапускается.
+
+``/system script job remove [find script=PPPSignal]`` - останавливает скрипт
+
+``/interface ppp-client info ppp-out1`` - получить информацию с модема.
+
+.. code-block:: bash
+
+    [tech@vita-ers-kpss-18-22] > system script job remove [find script=PPPSignal]
+    [tech@vita-ers-kpss-18-22] > /interface ppp-client info ppp-out1
+           modem-status: ready
+             pin-status: no password required
+          functionality: full
+           manufacturer: huawei
+                  model: E3372
+               revision: 21.180.01.00.00
+          serial-number: 869907021210881
+       current-operator: MegaFon (cellid: 9d8ee12, lac: 190f)
+                   imsi: 250026270383832
+      access-technology: Evolved 3G (LTE)
+        signal-strength: -51 dBm
+       frame-error-rate: n/a
+
+Для USB-модема Huawei
+---------------------
+
+Для Huawei в modeminit должна быть запись формата ``AT^SYSCFGEX="00",3fffffff,2,4,7fffffffffffffff,,``.
+
+Если там другая запись или ничего нет, значит модем не Huawei команды из этого раздела могут не подойти.
+
+Проверка сим:
+
+``system script job remove [find script=PPPSignal]`` - удаляет скрипт для считывания информации с модема
+
+``system serial-terminal port=usb1 channel=1`` - подключается к модему 
+
+.. note::
+
+    Эти две команды надо вводить быстро, потому что скрипт часто перезапускается.
+
+затем:
+
+``AT^ICCID?`` - выводит ICCID sim-карты
+
+Плата - Модемы
+--------------
+
+* 912 USB
+* 912 Simcom 7600/7660
+* 912 Quectel EP06 cat 6
+* 912 Fifocom 850 cat 9 ROS 7
+* 912 Fibocom 860 cat 16 ROS 7
+
+* M11 Simcom 7600/7660
+* M11 R11e-LTE cat 4
+* M11 Quectel EP06 cat 6
+* M11 Quectel EC25
+* M11 Fibocom 850 cat 9 ROS 7
+* M11 Fibocom 860 cat 16 ROS 7
+
+* M33 Simcom 7600/7660 + Simcom 7600/7660
+* M33 USB + Quectel EP06 cat 6
+* M33 Quectel EP06 cat 6 + Quectel EP06 cat 6
+
+* SXT R11e-LTE cat 4
+* SXT R11e-LTE cat 6
+* SXT Fibocom FG621
+
+* Ltap R11e-LTE cat 4
+
+* Kroks cat 4
+* Kroks LTE+ cat 6
+  
+  
