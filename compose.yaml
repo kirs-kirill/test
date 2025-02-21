@@ -4,7 +4,7 @@ services:
     volumes:
      - .:/usr/share/nginx/html
     ports:
-     - "8080:80"
+     - "81:80"
     environment:
      - NGINX_HOST=185.246.155.142
      - NGINX_PORT=80
