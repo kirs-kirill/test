@@ -20,7 +20,12 @@
     ``` sh
     kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
     ```
+6. Set IP var
+   ```
+   IP="$(curl 2ip.ru)"
+   echo $IP
+   ```
 6. Dashboard
     ```
-    http://{IP}:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default
+    echo "http://$IP:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/workloads?namespace=default"
     ```
