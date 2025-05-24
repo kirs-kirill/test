@@ -14,7 +14,7 @@
     ```
 4. Start minikube
     ``` sh
-    minikube start --driver=docker
+    minikube start --driver=docker && minikube dashboard
     ```
 5. For external access to dashboard setup proxy (use your external IP or `0.0.0.0` for all IP's):
     ``` sh
