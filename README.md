@@ -3,6 +3,6 @@
     sudo systemctl enable --now code-server@$USER
     code-server
 
-Edit `./.config/code-server/config.yaml`
+Edit `./.config/code-server/config.yaml` and reboot machine.
 
 # Install [`docker & minikube`](Install_and_configure_minikube.md)
