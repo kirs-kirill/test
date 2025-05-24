@@ -10,7 +10,7 @@
     ```
 3. Install minikube and cubectl:
     ``` sh
-    https://raw.githubusercontent.com/kirs-kirill/test/refs/heads/main/install_minikube.sh | bash
+    curl https://raw.githubusercontent.com/kirs-kirill/test/refs/heads/main/install_minikube.sh | bash
     ```
 4. For external access to dashboard setup proxy (use your external IP or `0.0.0.0` for all IP's):
     ``` sh
