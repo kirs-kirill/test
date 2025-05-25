@@ -3,7 +3,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest
 sudo dpkg -i minikube_latest_amd64.deb
 
 # add autocompletion
-apt-get install bash-completion
+sudo apt-get install bash-completion
 source /etc/bash_completion
 source <(minikube completion bash) 
 
