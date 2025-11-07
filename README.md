@@ -5,3 +5,5 @@
 Edit `./.config/code-server/config.yaml` and reboot machine.
 
 # Install [`docker & minikube`](Install_and_configure_minikube.md)
+
+Test
