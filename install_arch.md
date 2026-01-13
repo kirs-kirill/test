@@ -4,6 +4,10 @@
 
 `timedatectl set-ntp true`
 
+`sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config`
+
+`systemctl start sshd`
+
 1. Create EFI partition:
     - `fdisk -l` to find the designation for the HDD. (Most likely `/dev/nvme1n1`)
     - `fdisk /dev/nvme1n1`
@@ -79,7 +83,7 @@
 
 16. `passwd`
 
-17. `pacman -S grub efibootmgr dhclient networkmanager kitty wget fastfetch`
+17. `pacman -S grub efibootmgr dhclient networkmanager kitty wget fastfetch nvidia-dkms nvidia-utils nvidia-settings vulkan-icd-loader opencl-nvidia libxnvctrl plasma sddm kde-applications-meta`
 
 18. Create EFI boot directory:
     - `mkdir /boot/EFI`
@@ -115,4 +119,4 @@
     multilib
     ```
 
-27. `sudo pacman -Syu nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl`
+<!-- 27. `sudo pacman -Syu nvidia-dkms nvidia-utils nvidia-settings vulkan-icd-loader opencl-nvidia libxnvctrl` -->
