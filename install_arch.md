@@ -36,7 +36,7 @@
     - `mount /dev/nvme1n1p2 /mnt`
 
 5. Install Arch linux base packages:
-    - `pacstrap -i /mnt base`
+    - `pacstrap -i /mnt base nano`
 
 6. Generate the `/etc/fstab` file:
     - `genfstab -U -p /mnt >> /mnt/etc/fstab`
@@ -83,7 +83,7 @@
 
 16. `passwd`
 
-17. `pacman -S grub efibootmgr dhclient networkmanager kitty wget fastfetch nvidia-dkms nvidia-utils nvidia-settings vulkan-icd-loader opencl-nvidia libxnvctrl plasma sddm kde-applications-meta`
+17. `pacman -S grub efibootmgr dhclient networkmanager kitty wget fastfetch nvidia-dkms nvidia-utils nvidia-settings vulkan-icd-loader opencl-nvidia libxnvctrl plasma sddm kde-applications-meta sudo`
 
 18. Create EFI boot directory:
     - `mkdir /boot/EFI`
@@ -104,10 +104,10 @@
 
 23. `nano /etc/sudoers`
     ```
-    %wheel ALL=ALL ALL
+    %sudo ALL=(ALL:ALL) ALL
     ```
 
-24. - `useradd -m -G wheel -s /bin/bash usem`
+24. - `useradd -m -G sudo -s /bin/bash usem`
     - `passwd usem`
 
 
